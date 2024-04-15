@@ -28,12 +28,12 @@ export default function BodyParts(){
         </View>
     )
 }
-{/*  onPress mthod needs to move the screen but also push the relevant data too*/}
+{/*  onPress method needs to move the screen but also push the relevant data too*/}
 const BodyPartCard = ({item, router, index})=> {
     return(
         <View>
             <TouchableOpacity
-            onPress={()=> router.push({pathname: '/exercises', params: item})}
+                onPress={()=> router.push({pathname: '/exercises', params: item})}
                 style={{width: wp(44), height: wp(52)}}
                 className="flex justify-end p-4 mb-4"
             >
