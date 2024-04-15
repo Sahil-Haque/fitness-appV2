@@ -1,43 +1,43 @@
 export const bodyParts = [
     {
         name: 'back',
-        image: require('..assets/images/back.jpg')
+        image: require('../assets/images/back.jpg')
     },
     {
         name: 'cardio',
-        image: require('..assets/images/cardio.jpg')
+        image: require('../assets/images/cardio.jpg')
     },
     {
         name: 'chest',
-        image: require('..assets/images/chest.jpg')
+        image: require('../assets/images/chest.jpg')
     },   
     {
         name: 'lower arms',
-        image: require('..assets/images/lowerArms.jpg')
+        image: require('../assets/images/lowerArms.jpg')
     },  
      {
         name: 'lower legs',
-        image: require('..assets/images/lowerLegs.jpg')
+        image: require('../assets/images/lowerLegs.jpg')
     },      
     {
         name: 'neck',
-        image: require('..assets/images/neck.jpg')
+        image: require('../assets/images/neck.jpg')
     },    
     {
         name: 'shoulders',
-        image: require('..assets/images/shoulders.jpg')
+        image: require('../assets/images/shoulders.jpg')
     },    
     {
         name: 'upper arms',
-        image: require('..assets/images/upperArms')
+        image: require('../assets/images/upperArms.jpg')
     },    
     {
         name: 'upper legs',
-        image: require('..assets/images/upperLegs')
+        image: require('../assets/images/upperLegs.jpg')
     },
     {
         name: 'waist',
-        image: require('..assets/images/waist.jpg')
+        image: require('../assets/images/waist.jpg')
     }  
 ]
 
