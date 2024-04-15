@@ -1,3 +1,5 @@
+export const rapidApiKey = '9442d9a378mshe1211b1b8ab4572p1f1905jsn4f99426a0a7f'
+
 export const bodyParts = [
     {
         name: 'back',
