@@ -16,7 +16,7 @@ export default function Home(){
     <SafeAreaView className="flex-1 bg-white flex space-y-5" edges={['top']} >
        <StatusBar style='dark'></StatusBar>
 
-       {/* Punchline and profile pic image*/}
+       {/* Banner and profile pic image*/}
        <View className="flex-row justify-between items-center mx-5">
         <View className="space-y-2">
             <Text
