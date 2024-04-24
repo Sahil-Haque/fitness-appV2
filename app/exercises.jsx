@@ -11,7 +11,7 @@ import { ScrollView } from 'react-native-virtualized-view';
 export default function Exercises(){
     const router= useRouter();
 
-    const [exercises, setExercises] = useState(demoExercises);
+    const [exercises, setExercises] = useState([]);
 
     {/* Sends data that was passed from the previous component*/}
     const item = useLocalSearchParams();
@@ -40,7 +40,6 @@ export default function Exercises(){
             />
 
             {/*Back button for exercises screen */}
-             {/* NEED TO ADD BACK BUTTON HERE*/}
             <TouchableOpacity 
                 onPress={()=> router.back()}
                 className="bg-purple-500 mx-4 absolute flex rounded-[15px]" 

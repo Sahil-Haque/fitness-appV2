@@ -47,7 +47,7 @@ export const demoExercises = [
     {
       "bodyPart": "back",
       "equipment": "cable",
-      "gifUrl": "https://v2.exercisedb.io/image/to4enOQ86C-ilO",
+      "gifUrl": "https://v2.exercisedb.io/image/dzWV2otI0c0bxB",
       "id": "0007",
       "instructions": [
         "Sit on the cable machine with your back straight and feet flat on the ground.",
