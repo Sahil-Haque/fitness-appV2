@@ -6,9 +6,11 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeIn, FadeInDown, FadeOut } from 'react-native-reanimated';
 import { useRouter } from 'expo-router';
 
+
 export default function Index() {
     const router = useRouter();
     return (
+
         <View className="flex-1 flex justify-end">
         <StatusBar style="light" />
         <Image className="h-full w-full absolute" source={require('../assets/images/homepage.jpg')} />
@@ -30,16 +32,16 @@ export default function Index() {
         {/* animation for welcome text*/}
          <Animated.View entering={FadeInDown.delay(100)} className='flex items-center'>
             <Text style={{fontSize: hp(5)}} className="text-white font-bold tracking-wide">
-               <Text className="text-rose-600"> Welcome </Text> 
+               <Text className="text-purple-300"> Welcome </Text> 
             </Text>
          </Animated.View>   
 
         {/* animation for get started button*/}
          <Animated.View entering={FadeInDown.delay(250).springify()}>
             <TouchableOpacity
-                onPress={()=> router.push('home')}
+                onPress={()=> router.push('signUp')}
                 style={{height: hp(7), width: wp(80)}}
-                className="bg-rose-600 flex items-center justify-center mx-auto rounded-full border-[2px] border-neutral-200 "
+                className="bg-purple-500 flex items-center justify-center mx-auto rounded-full border-[2px] border-neutral-200 "
             >
                 <Text  style={{fontSize: hp(3)}} className="text-white font-bold tracking-widest">
                     Get started
