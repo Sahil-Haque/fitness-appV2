@@ -29,6 +29,7 @@ export default function BodyParts(){
         </View>
     )
 }
+
 {/*  onPress method needs to move the screen but also push the relevant data too*/}
 const BodyPartCard = ({item, router, index})=> {
     return(
