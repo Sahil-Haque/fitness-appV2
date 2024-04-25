@@ -12,7 +12,7 @@ export default function useAuth(){
         Authenticator that checks if the user is logged in or not 
         and changes the state accordingly.
         We can use the states to update the other pages. 
-*/}
+    */}
    useEffect(()=> {
         const unsub = onAuthStateChanged(auth, user => {
             console.log('got user: ', user)

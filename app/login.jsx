@@ -2,27 +2,32 @@ import { View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, Image } 
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import { useRouter } from 'expo-router';
+import {  useRouter } from 'expo-router';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/firebase';
-
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function Login(){
     
     const router = useRouter();
+
+    const navigation = useNavigation();
     const [email,setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+
+
     {/*
-        Asynchoronous function that acts seperately to the program
+        Asynchronous function that acts seperately to the program
         Checks if the user has entered both the email and password with correct syntax
         If it is true then the details will be saved inot firebases database
     */}
     const handleSubmit = async ()=> {
         if(email && password){
             try{
-                await signInWithEmailAndPassword(auth, email, password)
+                await signInWithEmailAndPassword(auth, email, password);
+                router.push('home')
             }catch(err){
                 console.log('Got error: ', err.message);
             }

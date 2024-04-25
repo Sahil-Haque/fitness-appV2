@@ -5,12 +5,14 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import { useRouter } from 'expo-router';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/firebase';
-
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function SignUp(){
     
     const router = useRouter();
+    const navigation = useNavigation();
+
     const [email,setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -61,9 +63,9 @@ export default function SignUp(){
                         Full name
                     </Text>
                     <TextInput 
-                        className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
-                        value="brian kennedy"
-                        placeholder='Enter name'
+                        className="p-4 bg-gray-200 text-gray-500 rounded-2xl"
+                        value="Leave this empty "
+                        placeholder='Enter Username'
                     />
 
                     <Text className="text-gray-700 ml-4">

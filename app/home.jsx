@@ -6,17 +6,19 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import BodyParts from '../components/BodyParts';
 import { signOut } from 'firebase/auth';
 import { auth } from '../config/firebase';
+import { useRouter } from 'expo-router';
 
 
 {/*
     edges - prevents the background color from overlapping with the top of the screen
 */}
-
+const router = useRouter();
 
 export default function Home(){
 
     const handleLogout = async () => {
         await signOut(auth);
+        
     }
 
     return(
