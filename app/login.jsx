@@ -1,14 +1,33 @@
 import { View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, Image } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { useRouter } from 'expo-router';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../config/firebase';
 
 
 
 export default function Login(){
     
     const router = useRouter();
+    const [email,setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    {/*
+        Asynchoronous function that acts seperately to the program
+        Checks if the user has entered both the email and password with correct syntax
+        If it is true then the details will be saved inot firebases database
+    */}
+    const handleSubmit = async ()=> {
+        if(email && password){
+            try{
+                await signInWithEmailAndPassword(auth, email, password)
+            }catch(err){
+                console.log('Got error: ', err.message);
+            }
+        }
+    }
 
     return(
        <View className="flex-1 bg-transparent">
@@ -42,8 +61,9 @@ export default function Login(){
                     </Text>
                     <TextInput 
                         className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
-                        value=""
                         placeholder='Enter Email'
+                        value={email}
+                        onChangeText={value => setEmail(value)}
                     />
                     
                     <Text className="text-gray-700 ml-4">
@@ -52,15 +72,18 @@ export default function Login(){
                     <TextInput 
                         className="p-4 bg-gray-200 text-gray-700 rounded-2xl"
                         secureTextEntry
-                        value=""
                         placeholder='Enter Password'
+                        value={password}
+                        onChangeText={value => setPassword(value)}
                     />
                     {/* FORGOT PASSWORD TEXT */}
                     <TouchableOpacity className="flex items-end mb-5">
                         <Text className="text-gray-700">Forgot Password?</Text>
                     </TouchableOpacity>
 
+                    {/* LOGIN BUTTON */}
                     <TouchableOpacity
+                        onPress={handleSubmit}
                         className="py-3 bg-purple-300 rounded-xl"
                     >
                         <Text className="font-xl font-bold text-center text-gray-700">

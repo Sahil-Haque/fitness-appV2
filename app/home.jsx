@@ -1,9 +1,11 @@
-import { View, Text, Dimensions, Image } from 'react-native';
+import { View, Text, Dimensions, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import BodyParts from '../components/BodyParts';
+import { signOut } from 'firebase/auth';
+import { auth } from '../config/firebase';
 
 
 {/*
@@ -12,6 +14,11 @@ import BodyParts from '../components/BodyParts';
 
 
 export default function Home(){
+
+    const handleLogout = async () => {
+        await signOut(auth);
+    }
+
     return(
     <SafeAreaView className="flex-1 bg-white flex space-y-5" edges={['top']} >
        <StatusBar style='dark'></StatusBar>
@@ -32,13 +39,15 @@ export default function Home(){
                 Workout
             </Text>
         </View>
-        {/* iNSERT IMAGE LINK ON LINE 36 BY SOURCE*/}
+       
         <View className="flex justify-center items-center space-y-2">
+            <TouchableOpacity onPress={handleLogout}>
             <Image 
                 source={require('../assets/images/homepage.jpg')}                
                 style={{height: hp(6), width: wp(6)}}
                 className="rounded-full" 
             />
+            </TouchableOpacity>
         </View>
        </View>
         
