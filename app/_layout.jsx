@@ -18,6 +18,10 @@ export default function _layout(){
             <Stack.Screen name="exerciseDetails" options={{
                 presentation: 'Modal'
             }} />
+
+            <Stack.Screen name="injuries" options={{
+                presentation: 'fullScreenModal'
+            }} />
         </Stack>
     )
 }

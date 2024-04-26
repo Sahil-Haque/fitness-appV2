@@ -84,7 +84,7 @@ export default function exerciseDetails() {
 
             {/*
                 Split - seperates the texts into sentences by displaying the text on a 
-                        new line after every comma as stated by (',) 
+                        new line after every comma as stated by (',') 
             */}
             {
                 item.instructions.split(',').map((instruction, index)=>{

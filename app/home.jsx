@@ -37,7 +37,7 @@ export default function Home(){
                 </Text>
                 <Text
                     style={{fontSize: hp(4.5)}}
-                    className="font-bold tracking-wider text-rose-600"
+                    className="font-bold tracking-wider text-purple-500"
                 >
                     Learn?
                 </Text>
@@ -53,11 +53,11 @@ export default function Home(){
                 </TouchableOpacity>
             </View>
         </View>
-        
-        {/*Section for Bmi and injuries */}
 
         {/* Top view component is for structure */}
         <View className="flex-row justify-between items-center mx-5">
+
+            {/* BMI section */}
             <View>
                 <TouchableOpacity 
                     onPress={()=> router.push('bmi')}
@@ -79,10 +79,10 @@ export default function Home(){
                 </TouchableOpacity>
             </View>
 
-            {/* Call injuries section here */}
+            {/*  injuries section */}
             <View>
                 <TouchableOpacity 
-                    onPress={()=> ('')}
+                    onPress={()=> router.push('injuries')}
                     style={{width: wp(44), height: wp(52)}}
                 >
                     <Image 
@@ -106,7 +106,6 @@ export default function Home(){
         <View className="flex-1" >
             <BodyParts />
         </View>
-
     </SafeAreaView>
     )
 }
