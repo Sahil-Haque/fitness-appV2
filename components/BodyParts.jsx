@@ -46,7 +46,7 @@ const BodyPartCard = ({item, router, index})=> {
                     className="rounded-[35px] absolute"
                 />
                 <LinearGradient
-                    colors={['transparent', 'rgba(0,0,0,0,9)']}
+                    colors={['white', 'rgba(0,0,0,0,9)']}
                     style={{width: wp(44), height: hp(7)}}
                     start={{x: 0.5, y: 0}}
                     end={{x: 0.5, y: 1}}

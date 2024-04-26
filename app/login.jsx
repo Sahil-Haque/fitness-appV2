@@ -27,7 +27,7 @@ export default function Login(){
         if(email && password){
             try{
                 await signInWithEmailAndPassword(auth, email, password);
-                router.push('home')
+                router.push('home');
             }catch(err){
                 console.log('Got error: ', err.message);
             }
@@ -36,7 +36,6 @@ export default function Login(){
 
     return(
        <View className="flex-1 bg-transparent">
-            {/*<Image className="h-full w-full absolute" source={require('../assets/images/homepage.jpg')} /> */}
 
             <SafeAreaView className="flex">
                 <View className="flex-row justify-start">

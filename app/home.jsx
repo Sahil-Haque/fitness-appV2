@@ -39,7 +39,7 @@ export default function Home(){
                     style={{fontSize: hp(4.5)}}
                     className="font-bold tracking-wider text-rose-600"
                 >
-                    Workout
+                    Learn?
                 </Text>
             </View>
         
@@ -54,28 +54,52 @@ export default function Home(){
             </View>
         </View>
         
-        {/*Section for Bmi, calorie tracker, and injuries */}
+        {/*Section for Bmi and injuries */}
 
-        {/* BMI */}
-        <View >
-            <TouchableOpacity 
-                onPress={router.push('bmi')}
-                style={{width: wp(44), height: wp(52)}}
-            >
-                <Image 
-                    source={require('../assets/images/BMI.png')}
-                    resizeMode='cover'
+        {/* Top view component is for structure */}
+        <View className="flex-row justify-between items-center mx-5">
+            <View>
+                <TouchableOpacity 
+                    onPress={()=> router.push('bmi')}
                     style={{width: wp(44), height: wp(52)}}
-                    className="rounded-[35px] absolute"
-                />
-
-                <Text 
-                    style={{fontSize: hp(2.3)}}
-                    className="text-white font-semibold text-center tracking-wide"
                 >
-                    BMI calc
-                </Text>
-            </TouchableOpacity>
+                    <Image 
+                        source={require('../assets/images/bmi2.png')}
+                        resizeMode='cover'
+                        style={{width: wp(44), height: wp(52)}}
+                        className="rounded-[35px] absolute"
+                    />
+
+                    <Text 
+                        style={{fontSize: hp(2.3), position: 'absolute', bottom: 1, right: 70, top: 170}}
+                        className="text-black font-semibold text-center tracking-wide"
+                    >
+                        BMI 
+                    </Text>
+                </TouchableOpacity>
+            </View>
+
+            {/* Call injuries section here */}
+            <View>
+                <TouchableOpacity 
+                    onPress={()=> ('')}
+                    style={{width: wp(44), height: wp(52)}}
+                >
+                    <Image 
+                        source={require('../assets/images/injury2.png')}
+                        resizeMode='cover'
+                        style={{width: wp(44), height: wp(52)}}
+                        className="rounded-[35px] absolute"
+                    />
+
+                    <Text 
+                        style={{fontSize: hp(2.3), position: 'absolute', bottom: 1, right: 50, top: 170}}
+                        className="text-black font-semibold text-center tracking-wide"
+                    >
+                        Injuries
+                    </Text>
+                </TouchableOpacity>
+            </View>
         </View>
 
         {/* Body parts list*/}

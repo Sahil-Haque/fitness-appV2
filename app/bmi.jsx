@@ -1,7 +1,11 @@
 import React, { useState } from 'react'; 
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native'; 
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { useRouter } from 'expo-router';
 
 export default function BMI() {
+
+    const router = useRouter();
 
     const [age, setAge] = useState('');
     const [weight, setWeight] = useState('');
@@ -140,6 +144,18 @@ export default function BMI() {
     {/* Creating the form */}
     return(
         <View style={styles.container}>
+            <View>
+            <TouchableOpacity 
+                onPress={()=> router.back()}
+                className="bg-purple-500 mx-4 absolute flex rounded-[15px]" 
+                style={{height: hp(5.5), width: hp(5.5), marginTop: hp(7), position: 'absolute', bottom: 90, left: -200}}
+            >
+                <Text className="flex justify-center pt-3 pl-1 font-semibold">
+                    BACK
+                </Text>
+                  
+            </TouchableOpacity>
+            </View>
             <Text style={styles.header}> 
                 Check your BMI
             </Text> 
@@ -227,11 +243,8 @@ export default function BMI() {
                     </View> 
                 )} 
             </View>
-        </View>
-
-    );
-
-    
+         </View>
+    ); 
 }
 
 

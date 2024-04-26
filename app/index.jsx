@@ -39,7 +39,7 @@ export default function Index() {
         {/* animation for get started button*/}
          <Animated.View entering={FadeInDown.delay(250).springify()}>
             <TouchableOpacity
-                onPress={()=> router.push('home')}
+                onPress={()=> router.push('signUp')}
                 style={{height: hp(7), width: wp(80)}}
                 className="bg-purple-500 flex items-center justify-center mx-auto rounded-full border-[2px] border-neutral-200 "
             >
